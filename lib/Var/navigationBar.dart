@@ -84,12 +84,12 @@ class NavigationBarPageState extends State<NavigationBarPage> {
           ),
           // backgroundColor: Color.fromRGBO(248, 91, 111, 1),
           centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () {}, //TODO  do something
-            ),
-          ],
+          // actions: <Widget>[
+          //   IconButton(
+          //     icon: Icon(Icons.shopping_cart),
+          //     onPressed: () {}, //TODO  do something
+          //   ),
+          // ],
           bottom: TabBar(
             isScrollable: true,
             tabs: _kTabs,

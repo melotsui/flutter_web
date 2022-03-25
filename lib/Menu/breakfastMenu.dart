@@ -44,77 +44,128 @@ class BreakfastMenuPageState extends State<BreakfastMenuPage> {
           ),
           Expanded(
             child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (BuildContext ctx, index) {
-                  return GestureDetector(
-                    onTap: (){
-
-                    },
-                    child: Card(
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.only(
-                            left: 20,
-                            top: 10,
-                            bottom: 5,
-                            right: 0),
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                              flex: 7,
-                              child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.symmetric(vertical: 5),
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      meatList[index].meatName.toString(),
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
-                                    ),
-                                  ),
-                                  // Container(
-                                  //   padding: EdgeInsets.symmetric(vertical: 5),
-                                  //   alignment: Alignment.centerLeft,
-                                  //   child: Text(
-                                  //     "Payment: ",
-                                  //     style: TextStyle(
-                                  //         fontWeight: FontWeight.bold,
-                                  //         fontSize: 15),
-                                  //   ),
-                                  // ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Column(
-                                children: <Widget>[
-                                  meatList[index].meatImage.toString() != "" ? Container(
-                                    padding: EdgeInsets.only(bottom: 5),
-                                    child: CircleAvatar(
-                                      radius: 35,
-                                      backgroundImage: NetworkImage(meatList[index].meatImage.toString()),
-                                    ),
-                                  ) : Container(),
-                                  Text(
-                                    "\$" + meatList[index].price!.toStringAsFixed(2),
+              itemCount: 10,
+              itemBuilder: (BuildContext ctx, index) {
+                return GestureDetector(
+                  onTap: () {},
+                  child: Card(
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(
+                          left: 20, top: 10, bottom: 5, right: 0),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            flex: 7,
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 5),
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    meatList[index].meatName.toString(),
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.black54,
-                                    ),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
                                   ),
-                                ],
-                              ),
+                                ),
+                                // Container(
+                                //   padding: EdgeInsets.symmetric(vertical: 5),
+                                //   alignment: Alignment.centerLeft,
+                                //   child: Text(
+                                //     "Payment: ",
+                                //     style: TextStyle(
+                                //         fontWeight: FontWeight.bold,
+                                //         fontSize: 15),
+                                //   ),
+                                // ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              children: <Widget>[
+                                meatList[index].meatImage.toString() != ""
+                                    ? Container(
+                                        padding: EdgeInsets.only(bottom: 5),
+                                        child: CircleAvatar(
+                                          radius: 35,
+                                          backgroundImage: NetworkImage(
+                                              meatList[index]
+                                                  .meatImage
+                                                  .toString()),
+                                        ),
+                                      )
+                                    : Container(),
+                                Text(
+                                  "\$" +
+                                      meatList[index].price!.toStringAsFixed(2),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                        ],
                       ),
                     ),
-                  );
-                }),
+                  ),
+                );
+              },
+            ),
+          ),
+          Container(
+            // color: Colors.black54,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+                  Colors.black87,
+                  Colors.black54,
+                ],
+              ),
+            ),
+            // padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  // color: Colors.black87,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Expanded(
+                  flex: 9,
+                  child: Text(
+                    "未選擇任何商品",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 40,
+                  color: Color.fromRGBO(248, 91, 111, 1),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    "去下單",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
