@@ -110,7 +110,9 @@ class BreakfastMenuPageState extends State<BreakfastMenuPage> {
                               ],
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                         ],
                       ),
                     ),
@@ -153,15 +155,20 @@ class BreakfastMenuPageState extends State<BreakfastMenuPage> {
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  height: 40,
-                  color: Color.fromRGBO(248, 91, 111, 1),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    "去下單",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
+                GestureDetector(
+                  onTap: (){
+
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 40,
+                    color: Color.fromRGBO(248, 91, 111, 1),
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    child: Text(
+                      "去下單",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
                   ),
                 ),
               ],
